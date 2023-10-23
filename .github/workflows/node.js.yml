@@ -29,7 +29,7 @@ jobs:
 
       - run: ls
         working-directory: ${{env.working-directory}}
-      - run: echo "hello World" >> someText.txt
+      - run: echo "hello World" >> someTexts.txt
         working-directory: ${{env.working-directory}}
       - run: ls
         working-directory: ${{env.working-directory}}
