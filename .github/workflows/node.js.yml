@@ -11,7 +11,7 @@ jobs:
   My-Cool-Job:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./public
+      working-directory: ./app/public
 
     strategy:
       matrix:
