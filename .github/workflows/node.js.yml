@@ -5,12 +5,10 @@ name: My First Real Workflow
 
 on:
   push:
-    branches: [ "main" ]
-
+    branches: ["main"]
 
 jobs:
   My-Cool-Job:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,14 +17,16 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: ls
-    - run: echo "Hello World"
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: cd public
+      - run: ls
+      - run: echo "Hello World"
+      - run: cd ..
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
